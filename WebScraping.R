@@ -77,7 +77,6 @@ data_collection <- as.data.frame(data_collection)
 glimpse(data_collection)
 View(data_collection)
 
-
 #####################################
 ######### Scrape an archive #########
 #####################################
@@ -159,5 +158,6 @@ for (i in seq_along(products_urls)) {
   results[[i]] = scraper_amazon(products_urls[[i]])
 }
 
+# Convert to data frame
 mydata <- as.data.frame(bind_rows(results, .id = 'url'))
 View(mydata)
